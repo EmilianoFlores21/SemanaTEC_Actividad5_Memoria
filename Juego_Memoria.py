@@ -59,6 +59,12 @@ def draw():
         goto(x + 2, y)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
+    
+    if hide == [False] * 64:
+        up()
+        goto(-100, 100)
+        color('white')
+        write("Acabado", font=('Arial', 40, 'normal'))
 
     update()
     ontimer(draw, 100)
