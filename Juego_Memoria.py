@@ -44,6 +44,7 @@ def tap(x, y):
     global tap_counter
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
+        "Counting and printing taps"
         tap_counter = tap_counter + 1
         print("Taps Count: ",tap_counter)
     else:
@@ -68,6 +69,7 @@ def draw():
         x, y = xy(mark)
         up()
 
+        "Drawing the square for each tile"
         goto(x, y)
         down()
         color('black', tiles[mark])
@@ -80,11 +82,13 @@ def draw():
     update()
     ontimer(draw, 100)
     
+    "Checking if the game is over and if so, printing <<Acabado>>"
     if hide == [False]*64:
         up()
         goto(-100,100)
         color("white")
         write("Acabado", font=("Arial",40,"normal"))
+
 shuffle(tiles)
 setup(420, 420, 370, 0)
 addshape(car)
