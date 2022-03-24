@@ -1,5 +1,6 @@
 # SemanaTEC_Actividad5_Memoria
- Actividad 5 y final de la Semana Tec 1001S: El arte de la prograamción. Juego de Memoria.
+ Actividad 5 y final de la Semana Tec 1001S: El arte de la prograamción. Juego de Memoria. El juego consiste en 
+ revelar cada cuadro en la pantalla y tocar su par para revelar la imagen del fondo.
 
 Para utilizar esta aplicación, es necesario tener instaladas las librerías random, freegames y turtle de Python. 
 No hay requerimientos técnicos específicos para ejecutar el programa.
