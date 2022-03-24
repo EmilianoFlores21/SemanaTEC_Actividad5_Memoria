@@ -7,6 +7,8 @@ tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
 
+tap_counter = 0
+
 def square(x, y):
     "Draw white square with black outline at (x, y)."
     up()
@@ -31,14 +33,15 @@ def tap(x, y):
     "Update mark and hidden tiles based on tap."
     spot = index(x, y)
     mark = state['mark']
-
+    global tap_counter
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
+        tap_counter = tap_counter + 1
+        print("Taps Count: ",tap_counter)
     else:
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-
 def draw():
     "Draw image and tiles."
     clear()
