@@ -59,7 +59,11 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        "If/else to center text accoring to number of digits"
+        if tiles[mark]>=10:
+            goto(x + 4, y + 2)    
+        else:
+            goto(x + 15, y + 2)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
