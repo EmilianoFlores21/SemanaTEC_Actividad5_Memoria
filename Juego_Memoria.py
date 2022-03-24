@@ -3,7 +3,15 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+"Color codes for tiles"
+tiles = ["#000000","#333333","#878787","#ffffff",
+"#ffb5b5","#ff6363","#ff0000","#800000",
+"#400000","#451f11","#bf00ff","#b3755f",
+"#ff8b61","#e35c2b","#ff4400","#ff9100",
+"#7d4b09","#ffd000","#a2ff00","#496b0f",
+"#819c52","#29731a","#144a09","#03bf00",
+"#04ff00","#06c96b","#0b8059","#0b7c80",
+"#00f7ff","#0077ff","#0008ff","#5900ff",] * 2
 state = {'mark': None}
 hide = [True] * 64
 
@@ -59,13 +67,14 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        "If/else to center text accoring to number of digits"
-        if tiles[mark]>=10:
-            goto(x + 4, y + 2)    
-        else:
-            goto(x + 15, y + 2)
-        color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        goto(x, y)
+        down()
+        color('black', tiles[mark])
+        begin_fill()
+        for count in range(4):
+            forward(50)
+            left(90)
+        end_fill()
 
     update()
     ontimer(draw, 100)
