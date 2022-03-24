@@ -67,6 +67,7 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
+
         goto(x, y)
         down()
         color('black', tiles[mark])
