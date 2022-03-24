@@ -79,7 +79,12 @@ def draw():
 
     update()
     ontimer(draw, 100)
-
+    
+    if hide == [False]*64:
+        up()
+        goto(-100,100)
+        color("white")
+        write("Acabado", font=("Arial",40,"normal"))
 shuffle(tiles)
 setup(420, 420, 370, 0)
 addshape(car)
